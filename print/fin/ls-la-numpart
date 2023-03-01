@@ -101,3 +101,7 @@
 
      A file with any other combination of alternate access methods is
      marked with a `+' character.
+     
+     ----------------------------------------------------------------
+     On a regular (MBR) system, there are a maximum of 4 reg. partitions. 
+     On a GPT system, you can have up to 128 partitions.
