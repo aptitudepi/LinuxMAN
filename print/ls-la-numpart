@@ -1,0 +1,107 @@
+`-l'
+`--format=long'
+`--format=verbose'
+     In addition to the name of each file, print the file type, file
+     mode bits, number of hard links, owner name, group name, size, and
+     timestamp (*note Formatting file timestamps::), normally the
+     modification time.  Print question marks for information that
+     cannot be determined.
+
+     Normally the size is printed as a byte count without punctuation,
+     but this can be overridden (*note Block size::).  For example, `-h'
+     prints an abbreviated, human-readable count, and
+     `--block-size="'1"' prints a byte count with the thousands
+     separator of the current locale.
+
+     For each directory that is listed, preface the files with a line
+     `total BLOCKS', where BLOCKS is the total disk allocation for all
+     files in that directory.  The block size currently defaults to 1024
+     bytes, but this can be overridden (*note Block size::).  The
+     BLOCKS computed counts each hard link separately; this is arguably
+     a deficiency.
+
+     The file type is one of the following characters:
+
+    `-'
+          regular file
+
+    `b'
+          block special file
+
+    `c'
+          character special file
+
+    `C'
+          high performance ("contiguous data") file
+
+    `d'
+          directory
+
+    `D'
+          door (Solaris 2.5 and up)
+
+    `l'
+          symbolic link
+
+    `M'
+          off-line ("migrated") file (Cray DMF)
+
+    `n'
+          network special file (HP-UX)
+
+    `p'
+          FIFO (named pipe)
+
+    `P'
+          port (Solaris 10 and up)
+
+    `s'
+          socket
+
+    `?'
+          some other file type
+
+     The file mode bits listed are similar to symbolic mode
+     specifications (*note Symbolic Modes::).  But `ls' combines
+     multiple bits into the third character of each set of permissions
+     as follows:
+
+    `s'
+          If the set-user-ID or set-group-ID bit and the corresponding
+          executable bit are both set.
+
+    `S'
+          If the set-user-ID or set-group-ID bit is set but the
+          corresponding executable bit is not set.
+
+    `t'
+          If the restricted deletion flag or sticky bit, and the
+          other-executable bit, are both set.  The restricted deletion
+          flag is another name for the sticky bit.  *Note Mode
+          Structure::.
+
+    `T'
+          If the restricted deletion flag or sticky bit is set but the
+          other-executable bit is not set.
+
+    `x'
+          If the executable bit is set and none of the above apply.
+
+    `-'
+          Otherwise.
+
+     Following the file mode bits is a single character that specifies
+     whether an alternate access method such as an access control list
+     applies to the file.  When the character following the file mode
+     bits is a space, there is no alternate access method.  When it is
+     a printing character, then there is such a method.
+
+     GNU `ls' uses a `.' character to indicate a file with an SELinux
+     security context, but no other alternate access method.
+
+     A file with any other combination of alternate access methods is
+     marked with a `+' character.
+     
+     ----------------------------------------------------------------
+     On a regular (MBR) system, there are a maximum of 4 reg. partitions. 
+     On a GPT system, you can have up to 128 partitions.
